@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-learning"
+version = "0.1.0"
+description = "Learning project for RAG chunking and embeddings"
+requires-python = ">=3.10"
+
+dependencies = [
+"pytest",
+"sentence-transformers",
+"transformers",
+"torch",
+"spacy",
+"faiss-cpu",
+"beautifulsoup4",
+"langchain-text-splitters",
+"langchain",
+"langchain-ollama",
+"openai-whisper",
+"nbformat",
+"docling",
+"huggingface_hub",
+"ollama",
+"jinja2",
+"streamlit",
+"sqlalchemy",
+"datetime",
+"logging"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "ipython",
+    "ipykernel",
+    "plotly",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = ["build", "dist", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
