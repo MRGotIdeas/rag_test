@@ -24,11 +24,23 @@ If you use other models, you can add them in variable `DOWNLOADED_MODELS` in 'sr
 Create a `.env` file in your project with `OLLAMA_URL` set. 
 
 # Use 
-For converting all data files (pdf, audio, xlsx, etc.) into markdown, please do : 
+For converting all data files (pdf, audio, xlsx, etc.) into markdown, please do: 
 
 ```bash
 python src/convert_docs_to_md.py
 ```
+
+The converted documents into markdown are then in folder `processed_data`
+
+For creating Faiss Vectordatabase index, please do:
+
+```bash
+python src/create_index.py
+```
+
+The Faiss index is then stored in folder vector_database.
+
+
 
 
 

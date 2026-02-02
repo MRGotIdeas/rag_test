@@ -73,26 +73,3 @@ class FaissVectorStore:
         return best_retrieval
     
 
-    #  def similarity_search(self, query_vector: list, top_k: int = 5) -> list[Retrieval]:
-    #     if query_vector.ndim == 1:
-    #         query_vector = query_vector.reshape(1, -1)
-    #         print("ici")
-    #     query_vector = query_vector.astype(np.float32)
-
-    #     distances, indices = self.index.search(query_vector, top_k)
-
-    #     embedded_chunk_selected = [self.id_to_chunk[idx] for idx in indices[0]]
-
-    #     best_retrieval = [
-    #         Retrieval(
-    #             text=s.chunk.text,
-    #             source=s.chunk.source,
-    #             chunk_id=s.chunk.chunk_id,
-    #             embedding=s.embedding,
-    #             similarity = 1 / (1 + distances[i])
-    #             ) 
-    #             for i, s in enumerate(embedded_chunk_selected)
-    #         ]
-        
-    #     return best_retrieval
-
