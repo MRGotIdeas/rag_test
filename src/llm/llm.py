@@ -5,6 +5,8 @@ from typing import Literal
 
 import requests
 
+from config import OLLAMA_URL
+
 DOWNLOADED_MODELS = Literal[
     "llama3.2:1b",
     "deepseek-r1:1.5b",
@@ -15,12 +17,10 @@ class OllamaClient:
     def __init__(
         self,
         model_name: DOWNLOADED_MODELS = "llama3.2:1b",
-        base_url: str | None = None,
+        base_url: str | None = OLLAMA_URL,
     ):
         self.model_name = model_name
-        self.base_url = base_url or os.getenv(
-            "OLLAMA_URL", "http://localhost:11434"
-        )
+        self.base_url = base_url
 
 
     def generate_stream(
