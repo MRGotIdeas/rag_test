@@ -20,7 +20,7 @@ In the project, I used :
 - `deepseek-r1:1.5b`,
 - `qwen2.5:1.5b-instruct`.
 
-If you use other models, you can add them in variable `DOWNLOADED_MODELS` in 'src/llm/llm.py'. 
+If you use other models, you can add them in variable `DOWNLOADED_MODELS` in `src/llm/llm.py`. 
 Create a `.env` file in your project with `OLLAMA_URL` set. 
 
 # Use 
@@ -40,8 +40,12 @@ python src/create_index.py
 
 The Faiss index is then stored in folder vector_database.
 
+To test Rag class, you can see `test/test_rag.py` but before, make sure you created the faiss index (need to create a fictive faiss vector database for tests).
 
 
+# In progress 
+
+Push the streamlit interface, but not for tonight ! 
 
 
 
