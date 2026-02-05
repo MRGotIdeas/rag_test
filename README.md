@@ -1,6 +1,9 @@
 # Apprentissage RAG 
 
-This project is for me to learn RAG. I followed the really good free (🎅) [course on Openclassroom](https://openclassrooms.com/fr/courses/8532116-mettez-en-place-un-rag-pour-un-llm).
+![alt text](image.png)
+
+
+This project is for me to learn RAG. I created my own code of RAG following the really good free (🎅) [course on Openclassroom](https://openclassrooms.com/fr/courses/8532116-mettez-en-place-un-rag-pour-un-llm).
 
 # Installation
 
@@ -18,7 +21,8 @@ You'll need a Ollama client available and download some models.
 In the project, I used :
 - `llama3.2:1b`, 
 - `deepseek-r1:1.5b`,
-- `qwen2.5:1.5b-instruct`.
+- `qwen2.5:1.5b-instruct`,
+- `qwen2.5:0.5b`.
 
 If you use other models, you can add them in variable `DOWNLOADED_MODELS` in `src/llm/llm.py`. 
 Create a `.env` file in your project with `OLLAMA_URL` set. 
@@ -38,15 +42,14 @@ For creating Faiss Vectordatabase index, please do:
 python src/create_index.py
 ```
 
-The Faiss index is then stored in folder vector_database.
+The Faiss index is then stored in folder `vector_database`.
 
-To test Rag class, you can see `test/test_rag.py` but before, make sure you created the faiss index (need to create a fictive faiss vector database for tests).
-
-
-# In progress 
-
-Push the streamlit interface, but not for tonight ! 
+To test Rag class, you can see `test/test_rag.py` but before, make sure you created the faiss index (#TODO create a fictive faiss vector database for tests).
 
 
+To activate the web app, please do: 
 
+```bash
+streamlit run src/interface/app.py
+```
 
